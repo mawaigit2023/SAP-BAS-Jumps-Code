@@ -1,0 +1,9 @@
+/* Enter your custom styles here */
+.migopage{
+    background-color: aliceblue;
+}
+.sapUiFormCLContainer>.sapUiFormCLContainerCont {
+    column-gap: 1.5rem;
+    font-size: 0;
+    background-color: aliceblue;
+}

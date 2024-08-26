@@ -1,0 +1,96 @@
+<mvc:View controllerName="migo.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:p="sap.ui.table"
+     xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}" class="migopage">
+        <content>
+        <Toolbar >
+        <!-- <OverflowToolbar > -->
+        <Label text="Gate Entry NO" design="Bold" wrapping="true" />
+        <Input id="gateEnt" placeholder="Enter NO"   showValueHelp="true" valueHelpRequest=".onValueHelpRequest" width="25%" />
+         <Button text="Fetch" type="Emphasized" width="150px" icon="sap-icon://accept"/>
+        
+        <!-- </OverflowToolbar> -->
+        </Toolbar>
+         
+             <f:SimpleForm id="SimpleFormDisplayColumn_threeGroups234"
+			editable="true"
+			layout="ColumnLayout"
+      class="forms"
+			 
+			columnsM="2"
+			columnsL="3"
+			columnsXL="4"
+			>
+			<f:content>
+				 <Label text="Document date" design="Bold"/>
+				 <Input  id ="docdate" width="80%"/>
+				 <Label text="Posting Date" design="Bold"/>
+				 <Input  id="post" width="80%"/>
+				 <Label text="Header Text" design="Bold"/>
+				 <Input  id ="header" width="80%"/>
+				 <Label text="Invoice NO" design="Bold"/>
+				 <Input id="invoice" width="80%"/>
+				 <Label text="Bill Of Ladding" design="Bold"/>
+				 <Input id="bill"  width="80%"/>
+				
+                  
+				  
+			</f:content>
+		</f:SimpleForm>
+         
+             <p:Table id="gateEntry" class="tablesticky" selectionMode="MultiToggle" rows="{oMainTableModel>}" 
+                visible="true" visibleRowCountMode="Interactive">
+          <p:columns>
+            <p:Column  >
+              <Label text="POItem"  class = 'tablelabel' />
+              <p:template>
+                <Text text ="{ebelp}"/>  
+               </p:template>
+            </p:Column>
+             <p:Column>
+              <Label text="PONo" wrapping="true" />
+              <p:template>
+                <Text text="{ebeln}"  />
+              </p:template>
+            </p:Column>
+            <p:Column>
+              <Label text="Material" />
+              <p:template>
+                <Text text="{matnr}"   />
+              </p:template>
+            </p:Column>
+             <p:Column>
+              <Label text="Description" />
+              <p:template>
+                <Text text="{maktx}"  />
+              </p:template>
+            </p:Column>
+            
+             <p:Column>
+              <Label text="Open Qty" />
+              <p:template>
+                <Text text="{opqty}" />
+              </p:template>
+            </p:Column>
+            
+             <p:Column>
+              <Label text="Challan Qty" />
+              <p:template>
+               
+                 <Input  value="{path: 'challnqty', type: 'sap.ui.model.type.Float'}" 
+                 editable="true" liveChange="onChallanQtyChange" />
+              </p:template>
+            </p:Column>
+            
+          </p:columns>
+        </p:Table>
+        </content>
+        <footer>
+        <OverflowToolbar >
+        <ToolbarSpacer />
+        <Button id="save_btn" type="Emphasized" text="Save" width="200px" icon="sap-icon://create-form"></Button>
+        </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
